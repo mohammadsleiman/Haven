@@ -29,6 +29,30 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAma_-14lDzGudZMBrBtft0vuUFYCxkJJw",
+    authDomain: "haen-67ea7.firebaseapp.com",
+    databaseURL: "https://haen-67ea7.firebaseio.com",
+    projectId: "haen-67ea7",
+    storageBucket: "haen-67ea7.appspot.com",
+    messagingSenderId: "227294280728",
+    appId: "1:227294280728:web:64d0bbef794fdaaf2d176d",
+    measurementId: "G-TSDFL7VKSR"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
