@@ -3,6 +3,8 @@ import { Grid, makeStyles } from "@material-ui/core";
 import "./CSS/App.css";
 import { green } from "@material-ui/core/colors";
 import DestinationListContainer from "./DestinationList/DestinationListContainer";
+import NavBar from "./NavBar";
+import DestinationInfoContainer from "./DestinationInfo/DestinationInfoContainer";
 
 const useStyles = makeStyles((theme) => ({
   gridStyle: {
@@ -18,20 +20,21 @@ function App() {
   const classes = useStyles();
   return (
     <Grid className={classes.gridStyle} container direction="column">
-      <Grid className={classes.navBarStyle} container item direction="row">
-        <h1>Haven</h1>
-        <p>Convenient Stops. Safe Rides. Monumental Experiences 🚲</p>
-      </Grid>
+      <NavBar />
 
       <Grid className={classes.gridStyle} container item direction="row">
         <DestinationListContainer />
 
-        <Grid item className={classes.gridStyle} xs={8}>
-          <h1> I am the maps</h1>
-        </Grid>
+        <DestinationInfoContainer />
       </Grid>
+    </Grid>
+  );
+}
 
-      <br></br>
+export default App;
+
+{
+  /* <br></br>
       <br></br>
       <br></br>
       <br></br>
@@ -57,9 +60,5 @@ function App() {
       </p>
       <p>
         <small>July 2020</small>
-      </p>
-    </Grid>
-  );
+      </p> */
 }
-
-export default App;
