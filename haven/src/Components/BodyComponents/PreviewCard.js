@@ -33,7 +33,7 @@ export default function PreviewCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.previewCardMediaStyle}
-          image={pic1}
+          image={props.havenData.image}
           title="picture"
         />
         <CardContent>

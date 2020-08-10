@@ -7,25 +7,13 @@ const useStyles = makeStyles(() => ({
     height: "60px",
   },
 }));
-var viewData = [];
-var coffeeData = [];
-var landmarkData = [];
-
-function generatePreviewCardContainerData(BodyData) {
-  BodyData.map((havenData) => {
-    if (havenData.type === "landmark") {
-      landmarkData.push(havenData);
-    } else if (havenData.type === "coffee") {
-      coffeeData.push(havenData);
-    } else if (havenData.type === "view") {
-      viewData.push(havenData);
-    }
-  });
-}
 
 export default function Body() {
   const classes = useStyles();
-  generatePreviewCardContainerData(BodyData);
+  // generatePreviewCardContainerData1(BodyData);
+  const landmarkData = BodyData.filter((item) => item.type === "landmark");
+  const coffeeData = BodyData.filter((item) => item.type === "coffee");
+  const viewData = BodyData.filter((item) => item.type === "view");
 
   return (
     <div>

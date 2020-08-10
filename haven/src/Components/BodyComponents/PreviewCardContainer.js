@@ -8,7 +8,7 @@ export default function PreviewCardContainer(props) {
   const classes = useStyles();
 
   var HavenType = props.havensData[0].type;
-  var previewCards = props.havensData.map((havenData) => {
+  const previewCards = props.havensData.map((havenData) => {
     return (
       <Grid item container xs={4}>
         <PreviewCard havenData={havenData} />
