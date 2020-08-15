@@ -1,7 +1,9 @@
 const express = require("express");
+// the server framerwork ontop of node.js
 const cors = require("cors");
+// helps express connect to mongoose better
 const mongoose = require("mongoose");
-
+// database side
 require("dotenv").config();
 
 const app = express();
@@ -17,12 +19,13 @@ connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
 });
 
-//const exercisesRouter = require("./routes/exercises");
-//const usersRouter = require("./routes/users");
-
-//app.use("/exercises", exercisesRouter);
-//app.use("/users", usersRouter);
+const destinationRouter = require("./routes/destination");
+app.use("/destination", destinationRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
+
+//USE THIS TO DROP DB AND SEED AGAIN:
+//const Seed = require("./seed/seed");
+//Seed();
