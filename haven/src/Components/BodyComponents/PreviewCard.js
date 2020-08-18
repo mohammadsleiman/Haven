@@ -12,21 +12,7 @@ import pic1 from "./sjsu.png";
 import { grey } from "@material-ui/core/colors";
 import { shadows } from "@material-ui/system";
 
-// OLD USESTYLES
-// const useStyles = makeStyles(() => ({
-//   previewCardMediaStyle: {
-//     height: 175,
-//     width: 325,
-//   },
-//   previewCardStyle: {
-//     borderRadius: 45,
-//   },
-//   previewCardSubTypographyStyle: {
-//     color: grey[500],
-//     marginLeft: "20px",
-//   },
-//   previewCardMainTypographyStyle: { marginLeft: "20px" },
-// }));
+// import pic1 from "./sjsu.png";
 
 const useStyles = makeStyles(() => ({
   previewCardMediaStyle: {
@@ -53,49 +39,23 @@ export default function PreviewCard(props) {
             variant="h6"
             className={classes.previewCardMainTypographyStyle}
           >
-            {props.havenData.name}
+            {props.destinationData.name}
           </Typography>
           <Typography
             variant="body1"
             className={classes.previewCardSubTypographyStyle}
           >
-            {props.havenData.neighborhood} · {props.havenData.time} 🚲
+            {props.destinationData.neighborhood} ·{" "}
+            {props.destinationData.distanceMiles} 🚲
           </Typography>
         </CardContent>
 
         <CardMedia
           className={classes.previewCardMediaStyle}
-          image={props.havenData.image}
+          image={"https://picsum.photos/201/300"}
           title="picture"
         />
       </CardActionArea>
     </Card>
   );
-
-  //OLD CARD
-  // return (
-  //   <Card className={classes.previewCardStyle}>
-  //     <CardActionArea>
-  //       <CardMedia
-  //         className={classes.previewCardMediaStyle}
-  //         image={props.havenData.image}
-  //         title="picture"
-  //       />
-  //       <CardContent>
-  //         <Typography
-  //           variant="body1"
-  //           className={classes.previewCardSubTypographyStyle}
-  //         >
-  //           {props.havenData.neighborhood} · {props.havenData.time} 🚲
-  //         </Typography>
-  //         <Typography
-  //           variant="h6"
-  //           className={classes.previewCardMainTypographyStyle}
-  //         >
-  //           {props.havenData.name}
-  //         </Typography>
-  //       </CardContent>
-  //     </CardActionArea>
-  //   </Card>
-  // );
 }
