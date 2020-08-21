@@ -32,6 +32,7 @@ const destinationSchema = new Schema(
     neighborhood: { type: String, required: true },
     rating: { type: Number, required: true },
     distanceMiles: { type: Number, required: true },
+    attributes: [{ type: String }],
   },
   {
     timestamps: true,

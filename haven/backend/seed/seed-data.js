@@ -7,6 +7,15 @@ const seedData = [
     neighborhood: "Santana Row",
     rating: 4.9,
     distanceMiles: 5,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
   {
     name: "Papermoon Cafe",
@@ -14,6 +23,15 @@ const seedData = [
     neighborhood: "Santana Row",
     rating: 3.5,
     distanceMiles: 6,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
   {
     name: "Voyager Craft Coffee",
@@ -21,6 +39,15 @@ const seedData = [
     neighborhood: "Downtown Santa Clara",
     rating: 4.5,
     distanceMiles: 7,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
   {
     name: "Sue's Gallery Cafe",
@@ -28,6 +55,15 @@ const seedData = [
     neighborhood: "Downtown Saratoga",
     rating: 5,
     distanceMiles: 4,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
   {
     name: "Vasona Lake",
@@ -35,6 +71,15 @@ const seedData = [
     neighborhood: "Los Gatos Creek",
     rating: 4.5,
     distanceMiles: 3,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
 
   {
@@ -43,6 +88,15 @@ const seedData = [
     neighborhood: "South San Jose",
     rating: 5,
     distanceMiles: 8,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
   {
     name: "Baylands Park",
@@ -50,6 +104,15 @@ const seedData = [
     neighborhood: "North San Jose",
     rating: 4.9,
     distanceMiles: 5,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
   {
     name: "Campbell Perc Ponds",
@@ -57,6 +120,15 @@ const seedData = [
     neighborhood: "Los Gatos Creek",
     rating: 4.5,
     distanceMiles: 3,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
 
   {
@@ -65,6 +137,15 @@ const seedData = [
     neighborhood: "San Jose State University",
     rating: 4.9,
     distanceMiles: 5,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
   {
     name: "Mission Santa Clara",
@@ -72,6 +153,15 @@ const seedData = [
     neighborhood: "Santa Clara University",
     rating: 4,
     distanceMiles: 6,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
   {
     name: "Farm Milk Dairy",
@@ -79,6 +169,15 @@ const seedData = [
     neighborhood: "HazelWood",
     rating: 5,
     distanceMiles: 0.1,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
   {
     name: "Campbell Water Tower",
@@ -86,6 +185,15 @@ const seedData = [
     neighborhood: "Downtown Campbell",
     rating: 4.9,
     distanceMiles: 5,
+    attributes: [
+      "Locally Owned",
+      "Mtn Bike Recommended",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Bathrooms",
+      "Outdoor Seating",
+    ],
   },
 ];
 module.exports = seedData;

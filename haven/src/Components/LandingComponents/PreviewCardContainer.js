@@ -16,7 +16,6 @@ export default function PreviewCardContainer(props) {
   });
   return (
     <div>
-      <Typography variant="h6">{"hi"}</Typography>
       <Grid container>
         <Grid xs={1} />
         <Grid item container spacing={12} xs={10}>

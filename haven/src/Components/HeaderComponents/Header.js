@@ -5,7 +5,7 @@ export default function Header() {
   // const classes = useStyles();
   return (
     <div>
-      <Typography variant="h4">Haven1</Typography>
+      <Typography variant="h4">Haven.</Typography>
     </div>
   );
 }

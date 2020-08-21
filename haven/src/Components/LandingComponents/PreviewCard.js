@@ -11,6 +11,7 @@ import {
 import pic1 from "./sjsu.png";
 import { grey } from "@material-ui/core/colors";
 import { shadows } from "@material-ui/system";
+import { useHistory } from "react-router-dom";
 
 // import pic1 from "./sjsu.png";
 
@@ -30,9 +31,14 @@ const useStyles = makeStyles(() => ({
 
 export default function PreviewCard(props) {
   const classes = useStyles();
+  let history = useHistory();
 
   return (
-    <Card className={classes.previewCardStyle} elevation={0}>
+    <Card
+      className={classes.previewCardStyle}
+      elevation={0}
+      onClick={() => history.push(`/destination/${props.destinationData._id}`)}
+    >
       <CardActionArea>
         <CardContent>
           <Typography
@@ -52,7 +58,7 @@ export default function PreviewCard(props) {
 
         <CardMedia
           className={classes.previewCardMediaStyle}
-          image={"https://picsum.photos/201/300"}
+          image={"https://picsum.photos/400/600"}
           title="picture"
         />
       </CardActionArea>
