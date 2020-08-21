@@ -3,6 +3,9 @@
 #googleapikey for index.html
 GoogleCloudConfig.js
 
+#unused firebasekey
+FireBase.js
+
 
 # dependencies
 /node_modules
