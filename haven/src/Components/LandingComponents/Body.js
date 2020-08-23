@@ -16,38 +16,10 @@ class Body extends React.Component {
 
     this.state = {
       destinationPreviewsData: [],
-      countryName: "",
-      countryCode: "",
-      city: "",
-      long: 0,
-      lat: 0,
     };
   }
 
-  /* GEOLOCATION API GETTER FUNCTION */
-  getGeoInfo = () => {
-    console.log("get request");
-    axios
-      .get("https://ipapi.co/json/")
-      .then((response) => {
-        let data = response.data;
-        this.setState({
-          countryName: data.country_name,
-          countryCode: data.country_calling_code,
-          city: data.city,
-          lat: data.latitude,
-          long: data.longitute,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   componentDidMount() {
-    /* GET GEOLOCATION INFO*/
-    this.getGeoInfo();
-
     axios.get("http://localhost:5000/destination/").then((response) => {
       console.log("in server");
       console.log("PRINTING RESPONSE DATA");
@@ -75,17 +47,10 @@ class Body extends React.Component {
 
     return (
       <div>
-        <h1>{`You are currently located in:${this.state.city}, at ${this.state.latitude}   `}</h1>
         <PreviewCardContainer havensData={coffeeData} />
-        <Paper
-          // className={classes.paperStyle}
-          elevation={0}
-        />
+        <Paper elevation={0} />
         <PreviewCardContainer havensData={landmarkData} />
-        <Paper
-          // className={classes.paperStyle}
-          elevation={0}
-        />
+        <Paper elevation={0} />
         <PreviewCardContainer havensData={viewData} />
       </div>
     );
