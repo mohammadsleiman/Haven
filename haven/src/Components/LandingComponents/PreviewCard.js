@@ -6,11 +6,8 @@ import {
   CardMedia,
   makeStyles,
   CardActionArea,
-  Shadows,
 } from "@material-ui/core";
-import pic1 from "./sjsu.png";
 import { grey } from "@material-ui/core/colors";
-import { shadows } from "@material-ui/system";
 import { useHistory } from "react-router-dom";
 
 // import pic1 from "./sjsu.png";
@@ -52,13 +49,13 @@ export default function PreviewCard(props) {
             className={classes.previewCardSubTypographyStyle}
           >
             {props.destinationData.neighborhood} ·{" "}
-            {props.destinationData.distanceMiles} 🚲
+            {props.destinationData.travelDistance} 🚲
           </Typography>
         </CardContent>
 
         <CardMedia
           className={classes.previewCardMediaStyle}
-          image={"https://picsum.photos/400/600"}
+          image={"https://loremflickr.com/600/400/bicyclist"}
           title="picture"
         />
       </CardActionArea>

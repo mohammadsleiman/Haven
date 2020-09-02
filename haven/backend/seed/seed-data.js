@@ -16,6 +16,10 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: {
+      type: "Point",
+      coordinates: [-121.9478553, 37.3202302],
+    },
   },
   {
     name: "Papermoon Cafe",
@@ -32,6 +36,10 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: {
+      type: "Point",
+      coordinates: [-121.9944611, 37.3239944],
+    },
   },
   {
     name: "Voyager Craft Coffee",
@@ -48,6 +56,7 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: { type: "Point", coordinates: [-121.972528, 37.32362] },
   },
   {
     name: "Sue's Gallery Cafe",
@@ -64,6 +73,7 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: { type: "Point", coordinates: [-122.0374028, 37.2558028] },
   },
   {
     name: "Vasona Lake",
@@ -80,6 +90,7 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: { type: "Point", coordinates: [-121.9725622, 37.2348826] },
   },
 
   {
@@ -97,6 +108,7 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: { type: "Point", coordinates: [-121.8598135, 37.2848984] },
   },
   {
     name: "Baylands Park",
@@ -113,6 +125,7 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: { type: "Point", coordinates: [-121.9979576, 37.4124569] },
   },
   {
     name: "Campbell Perc Ponds",
@@ -129,6 +142,7 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: { type: "Point", coordinates: [-121.9506961, 37.2687858] },
   },
 
   {
@@ -146,6 +160,7 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: { type: "Point", coordinates: [-121.8834692, 37.3352937] },
   },
   {
     name: "Mission Santa Clara",
@@ -162,6 +177,7 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: { type: "Point", coordinates: [-121.941533, 37.3492149] },
   },
   {
     name: "Farm Milk Dairy",
@@ -178,6 +194,7 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: { type: "Point", coordinates: [-121.9712076, 37.2739255] },
   },
   {
     name: "Campbell Water Tower",
@@ -194,6 +211,37 @@ const seedData = [
       "Bathrooms",
       "Outdoor Seating",
     ],
+    loc: { type: "Point", coordinates: [-121.9445335, 37.28584499999999] },
+  },
+  {
+    name: "AndyTown",
+    category: "coffee",
+    neighborhood: "Sunset District",
+    rating: 4.9,
+    distanceMiles: 5,
+    attributes: [
+      "Locally Owned",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Outdoor Seating",
+    ],
+    loc: { type: "Point", coordinates: [-122.5023147, 37.7566712] },
+  },
+  {
+    name: "Devout Coffee",
+    category: "coffee",
+    neighborhood: "Niles Fremont",
+    rating: 4.9,
+    distanceMiles: 5,
+    attributes: [
+      "Locally Owned",
+      "Quality Coffee",
+      "️️Bike Parking",
+      "Bottle Refill",
+      "Outdoor Seating",
+    ],
+    loc: { type: "Point", coordinates: [-121.9807223, 37.577231] },
   },
 ];
 module.exports = seedData;

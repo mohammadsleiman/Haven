@@ -27,5 +27,6 @@ app.listen(port, () => {
 });
 
 //USE THIS TO DROP DB AND SEED AGAIN:
+//INCLUDE CHANGES TO seed.js,models.js,destination.js
 //const Seed = require("./seed/seed");
 //Seed();

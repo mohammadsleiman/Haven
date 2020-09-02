@@ -32,6 +32,11 @@ export default function SearchPlacesAutoCompleteBox(props) {
     },
     debounce: 300,
   });
+
+  /* PASS COORDINATES UP TO PARENT*/
+  function updateCoorParent(coor) {
+    props.updateCoorParent(coor);
+  }
   const ref = useOnclickOutside(() => {
     // When user clicks outside of the component, we can dismiss
     // the searched suggestions by calling this method
@@ -58,8 +63,9 @@ export default function SearchPlacesAutoCompleteBox(props) {
     getGeocode({ address: description })
       .then((results) => getLatLng(results[0]))
       .then(({ lat, lng }) => {
-        console.log("📍 Coordinates: ", { lat, lng });
+        console.log("📍 GOOGLE API Coordinates: ", { lat, lng });
         res = { lat, lng };
+        updateCoorParent({ lat: lat, long: lng });
       })
       .catch((error) => {
         console.log("😱 Error: ", error);

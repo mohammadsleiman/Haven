@@ -2,18 +2,8 @@ import React from "react";
 import WcIcon from "@material-ui/icons/Wc";
 import LocalCafeIcon from "@material-ui/icons/LocalCafe"; //coffee
 import LocalDrinkIcon from "@material-ui/icons/LocalDrink"; //water
-import LockIcon from "@material-ui/icons/Lock";
-import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 import LocalParkingTwoToneIcon from "@material-ui/icons/LocalParkingTwoTone";
-import LocalDrinkTwoToneIcon from "@material-ui/icons/LocalDrinkTwoTone";
-import {
-  green,
-  red,
-  grey,
-  blue,
-  yellow,
-  purple,
-} from "@material-ui/core/colors";
+import { green, grey, blue, purple } from "@material-ui/core/colors";
 
 import {
   Card,
@@ -48,9 +38,9 @@ export default function DestinationCard(props) {
   const {
     attributes,
     name,
-    category,
+    // category,
     neighborhood,
-    rating,
+    // rating,
     distanceMiles,
   } = props.destinationData;
 
@@ -71,6 +61,8 @@ export default function DestinationCard(props) {
         return <WcIcon style={{ color: attributeColor }} />;
       case "Outdoor Seating":
         return <WcIcon style={{ color: attributeColor }} />;
+      default:
+        return <WcIcon style={{ color: attributeColor }} />;
     }
   }
 
@@ -88,8 +80,9 @@ export default function DestinationCard(props) {
         return grey[500];
     }
   }
-
-  function getAttributeColorStyle2(attribute) {
+  /*
+  {
+    function getAttributeColorStyle2(attribute) {
     switch (attribute) {
       case "Locally Owned":
         return { color: red[200] };
@@ -107,10 +100,17 @@ export default function DestinationCard(props) {
         return { backgroundColor: grey[300], color: "#ffffff" };
     }
   }
+  }*/
 
   function getAttributeColorStyle(attribute) {
     const attributeColor = getAttributeColor(attribute);
-    switch (attribute) {
+    return {
+      borderColor: attributeColor,
+      color: attributeColor,
+      borderWidth: "2px",
+    };
+
+    /*switch (attribute) {
       case "Locally Owned":
         return {
           borderColor: attributeColor,
@@ -160,7 +160,9 @@ export default function DestinationCard(props) {
           borderWidth: "2px",
           // marginLeft: "10px",
         };
-    }
+      default:
+        return {};
+    } */
   }
 
   function renderAttributes() {
@@ -172,7 +174,7 @@ export default function DestinationCard(props) {
             label={attribute}
             icon={getIcon(attribute)}
             style={getAttributeColorStyle(attribute)}
-            color={green[300]}
+            //color={green[400]}
             variant="outlined"
           />
         </Grid>
@@ -188,7 +190,7 @@ export default function DestinationCard(props) {
           <Grid container item xs={4}>
             <CardMedia
               className={classes.destinationCardMediaStyle}
-              image={"https://picsum.photos/600/400"}
+              image={"https://loremflickr.com/600/400/bicyclist"}
               title="picture"
             />
           </Grid>

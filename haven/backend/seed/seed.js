@@ -11,6 +11,7 @@ function Seed() {
     const rating = Number(seedData[i].rating);
     const distanceMiles = Number(seedData[i].distanceMiles);
     const attributes = seedData[i].attributes;
+    const location = seedData[i].loc;
 
     const newDestination = new Destination({
       name,
@@ -19,6 +20,7 @@ function Seed() {
       rating,
       distanceMiles,
       attributes,
+      location,
     });
 
     newDestination

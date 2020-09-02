@@ -15,10 +15,10 @@ class DestinationBody extends React.Component {
     axios
       .get(`http://localhost:5000/destination/${this.state.destinationid}`)
       .then((response) => {
-        console.log("in server");
+        /*console.log("in server");
         console.log("PRINTING RESPONSE DATA");
         console.log(response.data);
-        console.log("RESPONSE DATA PRINTED");
+        console.log("RESPONSE DATA PRINTED");*/
         if (response.data) {
           this.setState({ destinationData: response.data });
         } else {

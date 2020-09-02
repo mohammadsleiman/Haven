@@ -33,11 +33,39 @@ const destinationSchema = new Schema(
     rating: { type: Number, required: true },
     distanceMiles: { type: Number, required: true },
     attributes: [{ type: String }],
+    // loc: { type: { type: String }, coordinates: [Number] },
+    location: {
+      type: {
+        type: String, // Don't do `{ location: { type: String } }`
+        enum: ["Point"], // 'location.type' must be 'Point'
+        required: true,
+      },
+      coordinates: {
+        type: [Number],
+        required: true,
+      },
+    },
   },
   {
     timestamps: true,
   }
 );
+
+// const pointSchema = new mongoose.Schema({
+//   type: {
+//     type: String,
+//     enum: ["Point"],
+//     required: true,
+//   },
+//   coordinates: {
+//     type: [Number],
+//     required: true,
+//   },
+// });
+
+/* Lets mongodb know that loc is 2dsphere geoJSON */
+destinationSchema.index({ location: "2dsphere" });
+destinationSchema.index({ "geometry.coordinates": "2dsphere" });
 
 const Destination = mongoose.model("Destination", destinationSchema);
 
