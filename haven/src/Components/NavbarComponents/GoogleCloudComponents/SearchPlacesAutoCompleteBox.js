@@ -5,17 +5,29 @@ import usePlacesAutocomplete, {
 } from "use-places-autocomplete";
 import useOnclickOutside from "react-cool-onclickoutside";
 import { makeStyles } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
+import { withTheme } from "@material-ui/styles";
 
 const useStyles = makeStyles(() => ({
+  gridStyle: {
+    aligntItems: "flex-end",
+  },
   inputStyle: {
+    // backgroundColor: "#ffffff",
+    background: "transparent",
     border: "none",
-    borderBottom: "1px",
+    borderBottom: ".9px",
     borderBottomColor: "#E0E0E0",
     borderBottomStyle: "solid",
-    fontSize: "35px",
+    fontSize: "25px",
+    marginTop: "2px",
+    marginBottom: "20px",
+    color: "white",
   },
-  divStyle: {
-    marginLeft: "8px",
+  nearStyle: {
+    marginRight: "8px",
+    marginTop: "2px",
+    color: "white",
   },
 }));
 export default function SearchPlacesAutoCompleteBox(props) {
@@ -95,16 +107,26 @@ export default function SearchPlacesAutoCompleteBox(props) {
   }, [props.address]);
 
   return (
-    <div className={classes.divStyle} ref={ref}>
-      <input
-        value={value}
-        onChange={handleInput}
-        disabled={!ready}
-        placeholder="Your Neighborhood or Street"
-        className={classes.inputStyle}
-      />
-      {/* We can use the "status" to decide whether we should display the dropdown or not */}
-      {status === "OK" && <ul>{renderSuggestions()}</ul>}
+    <div className={classes.gridStyle} ref={ref}>
+      <Grid container direction="row">
+        <Grid item>
+          <Typography className={classes.nearStyle} variant="h5">
+            near
+          </Typography>
+        </Grid>
+
+        <Grid item>
+          <input
+            value={value}
+            onChange={handleInput}
+            disabled={!ready}
+            placeholder="Your Neighborhood or Street"
+            className={classes.inputStyle}
+          />
+        </Grid>
+        {/* We can use the "status" to decide whether we should display the dropdown or not */}
+        {status === "OK" && <ul>{renderSuggestions()}</ul>}
+      </Grid>
     </div>
   );
 }

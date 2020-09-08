@@ -1,9 +1,11 @@
-const seedData = require("./seed-data.js");
+//const seedData = require("./seed-data.js");
+const seedData = require("./OfficialData/coffee-data.js");
 const Destination = require("../models/destination.model");
 
 function Seed() {
   Destination.collection.drop();
   console.log("destinations dropped");
+  console.log(seedData.length);
   for (i = 0; i < seedData.length; i++) {
     const name = seedData[i].name;
     const category = seedData[i].category;
@@ -11,6 +13,8 @@ function Seed() {
     const rating = Number(seedData[i].rating);
     const distanceMiles = Number(seedData[i].distanceMiles);
     const attributes = seedData[i].attributes;
+    const img = seedData[i].img;
+    const links = seedData[i].links;
     const location = seedData[i].loc;
 
     const newDestination = new Destination({
@@ -21,6 +25,8 @@ function Seed() {
       distanceMiles,
       attributes,
       location,
+      img,
+      links,
     });
 
     newDestination

@@ -38,18 +38,22 @@ router.route("/add").post((req, res) => {
   const category = req.body.category;
   const neighborhood = req.body.neighborhood;
   const rating = Number(req.body.rating);
-  const distanceMiles = Number(req.body.distanceMiles);
+  // const distanceMiles = Number(req.body.distanceMiles);
   const attributes = req.body.attributes;
   const loc = req.body.loc;
+  const img = req.body.img;
+  const links = req.body.links;
 
   const newDestination = new Destination({
     name,
     category,
     neighborhood,
     rating,
-    distanceMiles,
+    // distanceMiles,
     attributes,
     loc,
+    img,
+    links,
   });
 
   newDestination

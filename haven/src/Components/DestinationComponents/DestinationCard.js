@@ -41,8 +41,37 @@ export default function DestinationCard(props) {
     // category,
     neighborhood,
     // rating,
-    distanceMiles,
+    // distanceMiles,
+    img,
   } = props.destinationData;
+
+  const bikeRidingRateMPH = 12;
+  const latlongConverstionRate = 69.2;
+
+  function getTravelDistance() {
+    var travelDistance;
+    if (props.destinationData.location) {
+      //checks to see if props are filled with defined data yet
+
+      travelDistance = (
+        latlongConverstionRate *
+        bikeRidingRateMPH *
+        Math.sqrt(
+          Math.pow(
+            props.destinationData.location.coordinates[0] - props.coor.long,
+            2
+          ) +
+            Math.pow(
+              props.destinationData.location.coordinates[1] - props.coor.lat,
+              2
+            )
+        )
+      ).toFixed(0);
+    }
+
+    return travelDistance;
+  }
+  const travelDistance = getTravelDistance();
 
   function getIcon(attribute) {
     const attributeColor = getAttributeColor(attribute);
@@ -190,7 +219,7 @@ export default function DestinationCard(props) {
           <Grid container item xs={4}>
             <CardMedia
               className={classes.destinationCardMediaStyle}
-              image={"https://loremflickr.com/600/400/bicyclist"}
+              image={img}
               title="picture"
             />
           </Grid>
@@ -203,7 +232,7 @@ export default function DestinationCard(props) {
             className={classes.CardHeaderTextStyle}
           >
             <Typography variant="h3">{name}</Typography>
-            <Typography variant="h6">{`${neighborhood} · ${distanceMiles} mi 🚲 `}</Typography>
+            <Typography variant="h6">{`${neighborhood} · ${travelDistance} mi 🚲 `}</Typography>
             <Grid container item className={classes.buttonGridStyle}>
               <Button variant="outlined" style={{ borderRadius: 6 }}>
                 <Typography variant="body1">Directions</Typography>

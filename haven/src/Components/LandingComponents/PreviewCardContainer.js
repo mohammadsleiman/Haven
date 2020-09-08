@@ -4,6 +4,8 @@ import { Grid } from "@material-ui/core";
 
 export default function PreviewCardContainer(props) {
   // let HavenType = props.havensData[0].category;
+
+  console.log(props);
   const previewCards = props.havensData.map((destinationData) => {
     return (
       <Grid item container xs={4}>

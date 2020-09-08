@@ -4,7 +4,8 @@ const seedData = [
     category: "coffee",
     neighborhood: "Santana Row",
     rating: -1,
-    attributes: [],
+    img: "https://i.imgur.com/CHssUFE.jpg",
+    attributes: ["Outdoor Seating", "Bathrooms Available", "Water Available"],
     links: {},
     loc: {
       type: "Point",
@@ -15,8 +16,13 @@ const seedData = [
     name: "Papermoon Cafe",
     category: "coffee",
     neighborhood: "West SanJose",
-    rating: -1,
-    attributes: {},
+    img: "https://i.imgur.com/8sFGnAM.jpg",
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     links: { instagram: "papermooncoffeeco" },
     loc: {
       type: "Point",
@@ -28,7 +34,8 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Santa Clara",
     rating: -1,
-    attributes: {},
+    img: "https://i.imgur.com/pJNh1rf.jpg",
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     links: { instagram: "voyagercraftcoffee" },
     loc: {
       type: "Point",
@@ -40,7 +47,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "San Pedro SQ Downtown San Jose",
     rating: -1,
-    attributes: {},
+    img: "https://loremflickr.com/600/400/bicyclist",
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bike Parking Available",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     links: { instagram: "voyagercraftcoffee" },
     loc: {
       type: "Point",
@@ -52,7 +66,13 @@ const seedData = [
     category: "coffee",
     neighborhood: "West San Jose",
     rating: -1,
-    attributes: {},
+    img: "https://i.imgur.com/cjR1SM1.jpg",
+    attributes: [
+      "Locally Owned",
+      "Bike Parking Available",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     links: { instagram: "voyagercraftcoffee" },
     loc: {
       type: "Point",
@@ -64,7 +84,15 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Saratoga",
     rating: -1,
-    attributes: [{ instagram: "suesgallerycafe" }],
+    img: "https://i.imgur.com/WhEaShP.jpg",
+    link: { instagram: "suesgallerycafe" },
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bike Parking Available",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-122.0374028, 37.2558028] },
   },
   {
@@ -72,7 +100,9 @@ const seedData = [
     category: "coffee",
     neighborhood: "El Camino",
     rating: -1,
-    attributes: [{ instagram: "bigmugcoffee" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "bigmugcoffee" },
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.980882, 37.3515167] },
   },
   {
@@ -80,7 +110,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown SanJose",
     rating: -1,
-    attributes: [{ instagram: "academiccoffeesj" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "academiccoffeesj" },
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-121.8840982, 37.3291328] },
   },
   {
@@ -88,7 +125,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown SanJose",
     rating: -1,
-    attributes: [{ instagram: "voltairecoffeeroasters" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "voltairecoffeeroasters" },
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-121.8868481, 37.3298891] },
   },
   {
@@ -96,7 +140,9 @@ const seedData = [
     category: "coffee",
     neighborhood: "Evergreen",
     rating: -1,
-    attributes: [{ instagram: "evergreencoffeeco" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "evergreencoffeeco" },
+    attributes: ["Outdoor Seating", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.7736079, 37.3142137] },
   },
   {
@@ -104,7 +150,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "JapanTown",
     rating: -1,
-    attributes: [{ instagram: "roysstation" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "roysstation" },
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-121.894717, 37.3490192] },
   },
   {
@@ -112,7 +165,9 @@ const seedData = [
     category: "coffee",
     neighborhood: "Midtown",
     rating: -1,
-    attributes: [{ instagram: "chromaticcoffee" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "chromaticcoffee" },
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.894717, 37.3490192] },
   },
   {
@@ -120,7 +175,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "the Alameda",
     rating: -1,
-    attributes: [],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: {},
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-121.9117863, 37.3317526] },
   },
   {
@@ -128,7 +190,9 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Campbell",
     rating: -1,
-    attributes: [],
+    img: "https://i.imgur.com/E68FRuK.jpg",
+    link: {},
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.9466851, 37.2872623] },
   },
   {
@@ -136,7 +200,9 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Los Gatos",
     rating: -1,
-    attributes: [],
+    img: "https://i.imgur.com/a5ChXlm.jpg",
+    link: {},
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.9808364, 37.2273788] },
   },
   {
@@ -144,7 +210,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Mountain View",
     rating: -1,
-    attributes: [],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: {},
+    attributes: [
+      "Locally Owned",
+      "Non-Profit",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-122.0787562, 37.3936221] },
   },
   {
@@ -152,7 +225,9 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown San Jose",
     rating: -1,
-    attributes: [{ instagram: "pastelariaadega" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "pastelariaadega" },
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.8898133, 37.336259] },
   },
   {
@@ -160,7 +235,15 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Campbell",
     rating: -1,
-    attributes: [],
+    img: "https://i.imgur.com/DwqYEtM.jpg",
+    link: {},
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bike Parking Available",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-121.9437394, 37.2871612] },
   },
   {
@@ -168,7 +251,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Los Gatos",
     rating: -1,
-    attributes: [],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: {},
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-121.97738, 37.221337] },
   },
   {
@@ -176,7 +266,9 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Los Gatos",
     rating: -1,
-    attributes: [{ instagram: "philzcatz" }],
+    img: "https://i.imgur.com/8p0cdc9.jpg",
+    link: { instagram: "philzcatz" },
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.9823489, 37.2251501] },
   },
   {
@@ -184,7 +276,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Sunnyvale",
     rating: -1,
-    attributes: [],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: {},
+    attributes: [
+      "Locally Owned",
+      "Bike Parking Available",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-122.0296601, 37.3773576] },
   },
   {
@@ -192,7 +291,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "Main Street Cupertino",
     rating: -1,
-    attributes: [{ instagram: "cafelatteacupertino" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "cafelatteacupertino" },
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-122.0123435, 37.3231977] },
   },
   {
@@ -200,7 +306,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "Main Street Cupertino",
     rating: -1,
-    attributes: [{ instagram: "philzmainst" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "philzmainst" },
+    attributes: [
+      "Outdoor Seating",
+      "Bike Parking Available",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-122.0104896, 37.3245007] },
   },
   {
@@ -208,7 +321,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "Campbell",
     rating: -1,
-    attributes: [{ instagram: "philzcampbell" }],
+    img: "https://i.imgur.com/UHj7oAf.jpg",
+    link: { instagram: "philzcampbell" },
+    attributes: [
+      "Outdoor Seating",
+      "Bike Parking Available",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-121.931356, 37.2875295] },
   },
   {
@@ -216,7 +336,15 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown San Jose",
     rating: -1,
-    attributes: [{ instagram: "philzsj" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "philzsj" },
+    attributes: [
+      "Outdoor Seating",
+      "Bike Parking Available",
+      "Bathrooms Available",
+      "Water Available",
+    ],
+
     loc: { type: "Point", coordinates: [-121.8851394, 37.3335189] },
   },
   {
@@ -224,7 +352,10 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Sunnyvale",
     rating: -1,
-    attributes: [{ instagram: "cafelatteacupertino" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "cafelatteacupertino" },
+    attributes: ["Outdoor Seating", "Bathrooms Available", "Water Available"],
+
     loc: { type: "Point", coordinates: [-122.0313897, 37.3773354] },
   },
   {
@@ -232,7 +363,15 @@ const seedData = [
     category: "coffee",
     neighborhood: "SoFA Downtown San Jose",
     rating: -1,
-    attributes: [{ instagram: "veroscoffeebar" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "veroscoffeebar" },
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
+
     loc: { type: "Point", coordinates: [-121.8864387, 37.3303865] },
   },
   {
@@ -240,7 +379,10 @@ const seedData = [
     category: "coffee",
     neighborhood: "Campbell",
     rating: -1,
-    attributes: [{ instagram: "barefootcoffeecampbell" }],
+    img: "https://i.imgur.com/oJRFrzz.jpg",
+    link: { instagram: "barefootcoffeecampbell" },
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
+
     loc: { type: "Point", coordinates: [-121.9320264, 37.3303865] },
   },
   {
@@ -248,7 +390,15 @@ const seedData = [
     category: "coffee",
     neighborhood: "West San Jose",
     rating: -1,
-    attributes: [{ instagram: "kcafeteahouse" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "kcafeteahouse" },
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
+
     loc: { type: "Point", coordinates: [-121.9321561, 37.3095448] },
   },
   {
@@ -256,7 +406,10 @@ const seedData = [
     category: "coffee",
     neighborhood: "Cupertino",
     rating: -1,
-    attributes: [{ instagram: "kcafeteahouse" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "kcafeteahouse" },
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
+
     loc: { type: "Point", coordinates: [-122.031522, 37.3181711] },
   },
   {
@@ -264,7 +417,10 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Mountain View",
     rating: -1,
-    attributes: [{ instagram: "1oz_coffee" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "1oz_coffee" },
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
+
     loc: { type: "Point", coordinates: [-122.0829527, 37.3878654] },
   },
   {
@@ -272,7 +428,15 @@ const seedData = [
     category: "coffee",
     neighborhood: "Santa Clara",
     rating: -1,
-    attributes: [{ instagram: "1oz_coffee" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "1oz_coffee" },
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
+
     loc: { type: "Point", coordinates: [-121.982848, 37.4046071] },
   },
   {
@@ -280,7 +444,9 @@ const seedData = [
     category: "coffee",
     neighborhood: "West San Jose",
     rating: -1,
-    attributes: [{ instagram: "bigmugcoffee" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "bigmugcoffee" },
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.968462, 37.3239691] },
   },
   {
@@ -288,7 +454,9 @@ const seedData = [
     category: "coffee",
     neighborhood: "North San Jose",
     rating: -1,
-    attributes: [{ instagram: "caffebene.sanjose" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "caffebene.sanjose" },
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.937611, 37.41277] },
   },
   {
@@ -296,7 +464,15 @@ const seedData = [
     category: "coffee",
     neighborhood: "the Alameda San Jose",
     rating: -1,
-    attributes: [{ instagram: "hannahcoffeeteasweets" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "hannahcoffeeteasweets" },
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
+
     loc: { type: "Point", coordinates: [-121.905534, 37.331574] },
   },
   {
@@ -304,7 +480,9 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Los Gatos",
     rating: -1,
-    attributes: [{ instagram: "hannahcoffeeteasweets" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "hannahcoffeeteasweets" },
+    attribute: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.9837, 37.2232028] },
   },
   {
@@ -312,7 +490,9 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Los Gatos",
     rating: -1,
-    attributes: [{ instagram: "hannahcoffeeteasweets" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "hannahcoffeeteasweets" },
+    attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.983, 37.222] },
   },
   {
@@ -320,7 +500,14 @@ const seedData = [
     category: "coffee",
     neighborhood: "Little Italy",
     rating: -1,
-    attributes: [{ instagram: "belbacioitaliancafe" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "belbacioitaliancafe" },
+    attribute: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
     loc: { type: "Point", coordinates: [-121.8985261, 37.3358125] },
   },
   {
@@ -328,15 +515,32 @@ const seedData = [
     category: "coffee",
     neighborhood: "Downtown Mountain View",
     rating: -1,
-    attributes: [{ instagram: "danastreetroasting" }],
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "danastreetroasting" },
+    attributes: [
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+      "Old School",
+    ],
     loc: { type: "Point", coordinates: [-122.0790417, 37.3924139] },
   },
+
   {
     name: "Maison Alyzée",
     category: "coffee",
     neighborhood: "Downtown Mountain View",
     rating: -1,
-    attributes: [{ instagram: "maisonalyzee" }],
-    loc: { type: "Point", coordinates: [-122.0793244e, 37.3937182] },
+    img: "https://loremflickr.com/600/400/bicyclist",
+    link: { instagram: "maisonalyzee" },
+    attributes: [
+      "Outdoor Seating",
+      "Locally Owned",
+      "Bathrooms Available",
+      "Water Available",
+    ],
+    loc: { type: "Point", coordinates: [-122.0793244, 37.3937182] },
   },
 ];
+
+module.exports = seedData;

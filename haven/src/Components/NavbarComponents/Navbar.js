@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, Grid } from "@material-ui/core";
 import SearchPlacesAutoCompleteBox from "./GoogleCloudComponents/SearchPlacesAutoCompleteBox";
+import Header from "../LandingComponents/PlaceHolderBodyV1/Header";
 import axios from "axios";
 
 class Navbar extends React.Component {
@@ -70,24 +71,35 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <Grid container>
+      <Grid
+        container
+        style={{
+          /*marginBottom: "60px",
+          marginTop: "20px",*/
+          backgroundColor: "#faab04",
+        }}
+      >
+        <Grid container item xs={1}></Grid>
+        <Grid container item xs={5}>
+          <Header />
+        </Grid>
         <Grid
           container
           item
-          xs={12}
+          xs={4}
           style={{
-            justifyContent: "center",
+            justifyContent: "flex-end",
             marginTop: "15px",
-            marginBottom: "15px",
+
+            alignItems: "flex-end",
           }}
         >
-          <Typography variant="h4">Havens near</Typography>
           <SearchPlacesAutoCompleteBox
             address={this.state.address}
             updateCoorParent={this.updateCoor}
           />
         </Grid>
-        <Grid container item xs={3}></Grid>
+        <Grid container item xs={1}></Grid>
       </Grid>
     );
   }
