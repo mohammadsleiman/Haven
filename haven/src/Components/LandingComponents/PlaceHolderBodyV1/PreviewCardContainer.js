@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 import PreviewCard from "./PreviewCardSuma";
-import { Grid, Typography, makeStyles } from "@material-ui/core";
+import { Grid, Typography, makeStyles, Button } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
   typoH2: {
@@ -22,21 +22,74 @@ const useStyles = makeStyles(() => ({
     // justifyContent: "space-evenly",
     // justifyContent: "space-between",
   },
+  buttonGridStyle: {
+    justifyContent: "flex-end",
+  },
 }));
+
 export default function PreviewCardContainer(props) {
+  // var amountViewed = 4;
+  const [amountViewed, setAmountViewed] = useState(4);
   // let HavenType = props.havensData[0].category;
   const classes = useStyles();
+  var previewCards;
+  previewCards = props.havensData
+    .slice(0, amountViewed)
+    .map((destinationData) => {
+      return (
+        <Grid item container xs={3}>
+          <PreviewCard
+            destinationData={destinationData}
+            key={destinationData._id}
+          />
+        </Grid>
+      );
+    });
 
-  const previewCards = props.havensData.map((destinationData) => {
-    return (
-      <Grid item container xs={3}>
-        <PreviewCard
-          destinationData={destinationData}
-          key={destinationData._id}
-        />
-      </Grid>
-    );
-  });
+  function handleButtonClick() {
+    setAmountViewed((prev) => prev + 4);
+    previewCards = props.havensData
+      .slice(0, amountViewed)
+      .map((destinationData) => {
+        return (
+          <Grid item container xs={3}>
+            <PreviewCard
+              destinationData={destinationData}
+              key={destinationData._id}
+            />
+          </Grid>
+        );
+      });
+  }
+  function handleLessButtonClick() {
+    if (amountViewed >= 8) {
+      setAmountViewed((prev) => prev - 4);
+    }
+    previewCards = props.havensData
+      .slice(0, amountViewed)
+      .map((destinationData) => {
+        return (
+          <Grid item container xs={3}>
+            <PreviewCard
+              destinationData={destinationData}
+              key={destinationData._id}
+            />
+          </Grid>
+        );
+      });
+  }
+
+  // function renderCard(destinationData) {
+  //   return (
+  //     <Grid item container xs={3}>
+  //       <PreviewCard
+  //         destinationData={destinationData}
+  //         key={destinationData._id}
+  //       />
+  //     </Grid>
+  //   );
+  // }
+
   return (
     <Grid
       container
@@ -64,6 +117,26 @@ export default function PreviewCardContainer(props) {
 
         <Grid item container xs={12} className={classes.containerGridStyle}>
           {previewCards}
+        </Grid>
+        <Grid item container xs={12} className={classes.buttonGridStyle}>
+          <Button
+            className={classes.buttonStyle}
+            color="secondary"
+            onClick={() => {
+              handleLessButtonClick();
+            }}
+          >
+            see less
+          </Button>
+          <Button
+            className={classes.buttonStyle}
+            color="secondary"
+            onClick={() => {
+              handleButtonClick();
+            }}
+          >
+            see more
+          </Button>
         </Grid>
       </Grid>
 

@@ -106,12 +106,10 @@ class Body extends React.Component {
     return (
       <div>
         <InfoContainer />
-        <Paper
-          elevation={24}
-          style={{ height: "5px", backgroundColor: "" }}
-        ></Paper>
+        <Paper elevation={24} style={{ height: "5px" }}></Paper>
         <FeaturedContainer havensData={coffeeData} />
         <PreviewCardContainer havensData={coffeeData} />
+        <Paper style={{ height: "50px" }}></Paper>
       </div>
     );
   }

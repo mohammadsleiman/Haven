@@ -4,6 +4,7 @@ import LocalCafeIcon from "@material-ui/icons/LocalCafe"; //coffee
 import LocalDrinkIcon from "@material-ui/icons/LocalDrink"; //water
 import LocalParkingTwoToneIcon from "@material-ui/icons/LocalParkingTwoTone";
 import { green, grey, blue, purple } from "@material-ui/core/colors";
+import { useHistory } from "react-router-dom";
 
 import {
   Card,
@@ -13,6 +14,7 @@ import {
   CardMedia,
   Typography,
   Button,
+  Paper,
 } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
@@ -31,10 +33,15 @@ const useStyles = makeStyles(() => ({
   renderGridStyle: {
     justifyContent: "flex-start",
   },
+  paperStyle: {
+    height: "50px",
+  },
 }));
 
 export default function DestinationCard(props) {
   const classes = useStyles();
+  let history = useHistory();
+
   const {
     attributes,
     name,
@@ -42,6 +49,7 @@ export default function DestinationCard(props) {
     neighborhood,
     // rating,
     // distanceMiles,
+    links,
     img,
   } = props.destinationData;
 
@@ -212,57 +220,69 @@ export default function DestinationCard(props) {
   }
 
   return (
-    <Card elevation={0}>
-      <Grid container>
-        <Grid container item xs={2}></Grid>
-        <Grid container item xs={5}>
-          <Grid container item xs={4}>
-            <CardMedia
-              className={classes.destinationCardMediaStyle}
-              image={img}
-              title="picture"
-            />
-          </Grid>
-          <Grid item xs={1}></Grid>
-          <Grid
-            container
-            item
-            xs={7}
-            direction="column"
-            className={classes.CardHeaderTextStyle}
-          >
-            <Typography variant="h3">{name}</Typography>
-            <Typography variant="h6">{`${neighborhood} · ${travelDistance} mi 🚲 `}</Typography>
-            <Grid container item className={classes.buttonGridStyle}>
-              <Button variant="outlined" style={{ borderRadius: 6 }}>
-                <Typography variant="body1">Directions</Typography>
-              </Button>
-              <Button
-                variant="outlined"
-                style={{ marginLeft: "15px", borderRadius: 6 }}
-              >
-                <Typography
-                  variant="body1"
-                  style={{ marginLeft: "14px", marginRight: "14px" }}
+    <div>
+      <Paper className={classes.paperStyle}></Paper>
+      <Card elevation={0}>
+        <Grid container>
+          <Grid container item xs={2}></Grid>
+          <Grid container item xs={5}>
+            <Grid container item xs={4}>
+              <CardMedia
+                className={classes.destinationCardMediaStyle}
+                image={img}
+                title="picture"
+              />
+            </Grid>
+            <Grid item xs={1}></Grid>
+            <Grid
+              container
+              item
+              xs={7}
+              direction="column"
+              className={classes.CardHeaderTextStyle}
+            >
+              <Typography variant="h3">{name}</Typography>
+              <Typography variant="h6">{`${neighborhood} · ${travelDistance} mi 🚲 `}</Typography>
+              <Grid container item className={classes.buttonGridStyle}>
+                <Button
+                  variant="outlined"
+                  style={{ borderRadius: 6 }}
+                  onClick={() =>
+                    (window.location.href = `https://www.google.com/maps/place/${links.map}`)
+                  }
                 >
-                  Save
-                </Typography>
-              </Button>
+                  <Typography variant="body1">Directions</Typography>
+                </Button>
+                <Button
+                  variant="outlined"
+                  style={{ marginLeft: "15px", borderRadius: 6 }}
+                  onClick={() =>
+                    (window.location.href = `https://www.instagram.com/${links.instagram}`)
+                  }
+                >
+                  <Typography
+                    variant="body1"
+                    style={{ marginLeft: "14px", marginRight: "14px" }}
+                  >
+                    Instagram
+                  </Typography>
+                </Button>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
 
-        <Grid
-          container
-          // direction="vertical"
-          item
-          xs={3}
-          className={classes.renderGridStyle}
-        >
-          {renderAttributes()}
+          <Grid
+            container
+            // direction="vertical"
+            item
+            xs={3}
+            className={classes.renderGridStyle}
+          >
+            {renderAttributes()}
+          </Grid>
+          <Grid container item xs={2}></Grid>
         </Grid>
-        <Grid container item xs={2}></Grid>
-      </Grid>
-    </Card>
+      </Card>
+    </div>
   );
 }

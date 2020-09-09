@@ -6,6 +6,7 @@ import {
   CardMedia,
   makeStyles,
   CardActionArea,
+  Paper,
 } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
 import { useHistory } from "react-router-dom";

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import DestinationCard from "./DestinationCard";
-import { Paper } from "@material-ui/core";
+import { Paper, Grid } from "@material-ui/core";
 class DestinationBody extends React.Component {
   constructor(props) {
     super(props);
@@ -31,13 +31,10 @@ class DestinationBody extends React.Component {
 
   render() {
     return (
-      <div>
-        <Paper elevation={0} styles={{ minHeight: "20px" }}></Paper>
-        <DestinationCard
-          destinationData={this.state.destinationData}
-          coor={this.props.coor}
-        />
-      </div>
+      <DestinationCard
+        destinationData={this.state.destinationData}
+        coor={this.props.coor}
+      />
     );
   }
 }
