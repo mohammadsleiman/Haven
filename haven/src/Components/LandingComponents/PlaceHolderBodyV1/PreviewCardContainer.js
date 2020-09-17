@@ -47,19 +47,21 @@ export default function PreviewCardContainer(props) {
     });
 
   function handleButtonClick() {
-    setAmountViewed((prev) => prev + 4);
-    previewCards = props.havensData
-      .slice(0, amountViewed)
-      .map((destinationData) => {
-        return (
-          <Grid item container xs={3}>
-            <PreviewCard
-              destinationData={destinationData}
-              key={destinationData._id}
-            />
-          </Grid>
-        );
-      });
+    if (amountViewed <= props.havensData.length) {
+      setAmountViewed((prev) => prev + 4);
+      previewCards = props.havensData
+        .slice(0, amountViewed)
+        .map((destinationData) => {
+          return (
+            <Grid item container xs={3}>
+              <PreviewCard
+                destinationData={destinationData}
+                key={destinationData._id}
+              />
+            </Grid>
+          );
+        });
+    }
   }
   function handleLessButtonClick() {
     if (amountViewed >= 8) {

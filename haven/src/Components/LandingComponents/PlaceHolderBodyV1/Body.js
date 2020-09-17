@@ -3,7 +3,7 @@ import { Paper, Typography } from "@material-ui/core";
 import PreviewCardContainer from "./PreviewCardContainer";
 import axios from "axios";
 import Header from "./Header";
-import InfoContainer from "./InfoContainer";
+import InfoContainer from "./InfoComponents/InfoContainer";
 import FeaturedContainer from "./FeaturedContainer";
 class Body extends React.Component {
   constructor(props) {
@@ -105,7 +105,7 @@ class Body extends React.Component {
     );
     return (
       <div>
-        <InfoContainer />
+        <InfoContainer updateCoorParent={this.props.updateCoorParent} />
         <Paper elevation={24} style={{ height: "5px" }}></Paper>
         <FeaturedContainer havensData={coffeeData} />
         <PreviewCardContainer havensData={coffeeData} />

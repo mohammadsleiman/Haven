@@ -73,33 +73,35 @@ class Navbar extends React.Component {
     return (
       <Grid
         container
+        item
         style={{
           /*marginBottom: "60px",
           marginTop: "20px",*/
-          backgroundColor: "#faab04",
+          backgroundColor: "#48A7FF",
         }}
+        direction="column"
       >
-        <Grid container item xs={1}></Grid>
-        <Grid container item xs={5}>
+        <Grid container item>
           <Header />
         </Grid>
         <Grid
           container
           item
           xs={4}
-          style={{
-            justifyContent: "flex-end",
-            marginTop: "15px",
-
-            alignItems: "flex-end",
-          }}
+          style={
+            {
+              // justifyContent: "flex-end",
+              // marginTop: "15px",
+              // marginBottom: "20px",
+              // alignItems: "flex-end",
+            }
+          }
         >
           <SearchPlacesAutoCompleteBox
             address={this.state.address}
             updateCoorParent={this.updateCoor}
           />
         </Grid>
-        <Grid container item xs={1}></Grid>
       </Grid>
     );
   }

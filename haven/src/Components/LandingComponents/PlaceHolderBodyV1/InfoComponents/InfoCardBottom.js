@@ -11,12 +11,12 @@ import {
 import bikeIMG from "./InfoImages/alexander.jpg";
 import { grey } from "@material-ui/core/colors";
 import { shadows } from "@material-ui/system";
-
+import img from "./InfoImages/FindLocalVector.png";
 const useStyles = makeStyles(() => ({
   previewCardMediaStyle: {
-    height: 400,
-    width: 500,
-    borderRadius: 45,
+    height: 153,
+    width: 367,
+    // borderRadius: 45,
   },
   previewCardStyle: {},
   previewCardSubTypographyStyle: {
@@ -28,56 +28,62 @@ const useStyles = makeStyles(() => ({
   },
   previewCardMainTypographyStyle: { marginLeft: "-17px" },
   previewCardActionArea: {
-    borderRadius: 45,
+    // borderRadius: 45,
   },
-  infoCardContentStyle: {
-    textAlign: "center",
-  },
+
   cardStyle: {
     background: "transparent",
     textAlign: "center",
-    borderRadius: 45,
-    height: 400,
-    width: 500,
+    // borderRadius: 45,
+    height: 153,
+    width: 367,
   },
   innerCardStyle: {
-    borderRadius: 45,
+    // borderRadius: 45,
   },
   outerGridStyle: {
-    textAlign: "center",
+    //textAlign: "center",
+    justifyContent: "right",
   },
-  innerGridStyle: {
-    justifyContent: "center",
-  },
+  innerGridStyle: {},
 }));
 
 export default function InfoCard(props) {
   const classes = useStyles();
 
   return (
-    <Grid container item className={classes.outerGridStyle}>
-      <Grid container item className={classes.innerGridStyle}>
-        <Card
-          elevation={5}
-          className={classes.cardStyle}
-          //onClick={() => history.push(`/destination/${props.destinationData._id}`)}
-        >
-          <CardActionArea className={classes.previewCardActionArea}>
+    <Grid
+      container
+      item
+      xs={12}
+      elevation={10}
+      className={classes.outerGridStyle}
+    >
+      <Grid
+        container
+        item
+        direction="column"
+        xs={12}
+        className={classes.innerGridStyle}
+      >
+        <Grid container item>
+          <Card className={classes.cardStyle}>
             <CardMedia
               className={classes.previewCardMediaStyle}
-              //image={"https://loremflickr.com/600/400/bicyclist"}
-              image={bikeIMG}
+              image={img}
               title="picture"
             />
-          </CardActionArea>
-        </Card>
-        <Typography
-          variant="h4"
-          className={classes.previewCardSubTypographyStyle}
-          align="center"
-        >
-          Explore your City 🚲
-        </Typography>
+          </Card>
+        </Grid>
+        <Grid container item>
+          <Typography
+            variant="h4"
+            className={classes.previewCardSubTypographyStyle}
+            align="center"
+          >
+            take a break. find something local.
+          </Typography>
+        </Grid>
       </Grid>
     </Grid>
   );

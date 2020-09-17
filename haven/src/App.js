@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Components/NavbarComponents/Navbar";
+// import Navbar from "./Components/NavbarComponents/Navbar";
 import RouterComponent from "./RouterComponent";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -29,9 +29,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        {/*
         <Navbar updateCoorParent={this.updateCoor} />
+        */}
         <Router>
-          <RouterComponent coor={this.state.coor} />
+          <RouterComponent
+            updateCoorParent={this.updateCoor}
+            coor={this.state.coor}
+          />
         </Router>
       </div>
     );

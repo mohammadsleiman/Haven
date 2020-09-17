@@ -5,29 +5,39 @@ import usePlacesAutocomplete, {
 } from "use-places-autocomplete";
 import useOnclickOutside from "react-cool-onclickoutside";
 import { makeStyles } from "@material-ui/core";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Grid, Card } from "@material-ui/core";
 import { withTheme } from "@material-ui/styles";
 
 const useStyles = makeStyles(() => ({
   gridStyle: {
-    aligntItems: "flex-end",
+    // alignItems: "flex-end",
   },
   inputStyle: {
     // backgroundColor: "#ffffff",
     background: "transparent",
     border: "none",
-    borderBottom: ".9px",
-    borderBottomColor: "#E0E0E0",
-    borderBottomStyle: "solid",
+    //borderBottom: ".9px",
+    //borderBottomColor: "#E0E0E0",
+    //borderBottomStyle: "solid",
     fontSize: "25px",
     marginTop: "2px",
-    marginBottom: "20px",
+    // marginBottom: "10px",
     color: "white",
   },
   nearStyle: {
-    marginRight: "8px",
+    marginRight: "15px",
     marginTop: "2px",
     color: "white",
+  },
+  cardStyle: {
+    backgroundColor: "#48A7FF",
+    width: "400px",
+    borderStyle: "solid",
+    borderColor: "white",
+    borderWidth: "thin",
+  },
+  innerGridStyle: {
+    margin: "10px",
   },
 }));
 export default function SearchPlacesAutoCompleteBox(props) {
@@ -108,14 +118,12 @@ export default function SearchPlacesAutoCompleteBox(props) {
 
   return (
     <div className={classes.gridStyle} ref={ref}>
-      <Grid container direction="row">
-        <Grid item>
+      <Card elevation={0} className={classes.cardStyle}>
+        <Grid container direction="row" className={classes.innerGridStyle}>
           <Typography className={classes.nearStyle} variant="h5">
             near
           </Typography>
-        </Grid>
 
-        <Grid item>
           <input
             value={value}
             onChange={handleInput}
@@ -123,10 +131,10 @@ export default function SearchPlacesAutoCompleteBox(props) {
             placeholder="Your Neighborhood or Street"
             className={classes.inputStyle}
           />
+          {/* We can use the "status" to decide whether we should display the dropdown or not */}
+          {status === "OK" && <ul>{renderSuggestions()}</ul>}
         </Grid>
-        {/* We can use the "status" to decide whether we should display the dropdown or not */}
-        {status === "OK" && <ul>{renderSuggestions()}</ul>}
-      </Grid>
+      </Card>
     </div>
   );
 }
