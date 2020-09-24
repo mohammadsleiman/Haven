@@ -1,10 +1,11 @@
 import React from "react";
 import { Paper, Typography } from "@material-ui/core";
-import PreviewCardContainer from "./PreviewCardContainer";
+import PreviewCardContainer from "./PreviewSectionComponents/PreviewCardContainer";
 import axios from "axios";
 import Header from "./Header";
 import InfoContainer from "./InfoComponents/InfoContainer";
-import FeaturedContainer from "./FeaturedContainer";
+import FeaturedContainer from "./FeaturedSectionComponents/FeaturedContainer";
+import CategoryContainer from "./CategoriesSection/CategoryContainer";
 class Body extends React.Component {
   constructor(props) {
     super(props);
@@ -103,13 +104,16 @@ class Body extends React.Component {
     const viewData = this.state.destinationPreviewsData.filter(
       (item) => item.category === "view"
     );
+    // header is in info container
     return (
       <div>
         <InfoContainer updateCoorParent={this.props.updateCoorParent} />
-        <Paper elevation={24} style={{ height: "5px" }}></Paper>
+        <Paper elevation={0} style={{ height: "50px" }}></Paper>
+        <CategoryContainer havensData={coffeeData} />
+        <Paper elevation={0} style={{ height: "50px" }}></Paper>
+
         <FeaturedContainer havensData={coffeeData} />
         <PreviewCardContainer havensData={coffeeData} />
-        <Paper style={{ height: "50px" }}></Paper>
       </div>
     );
   }

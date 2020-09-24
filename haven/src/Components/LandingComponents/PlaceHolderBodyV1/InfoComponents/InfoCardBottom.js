@@ -14,8 +14,8 @@ import { shadows } from "@material-ui/system";
 import img from "./InfoImages/FindLocalVector.png";
 const useStyles = makeStyles(() => ({
   previewCardMediaStyle: {
-    height: 153,
-    width: 367,
+    height: 153 * 0.7,
+    width: 367 * 0.7,
     // borderRadius: 45,
   },
   previewCardStyle: {},
@@ -35,15 +35,15 @@ const useStyles = makeStyles(() => ({
     background: "transparent",
     textAlign: "center",
     // borderRadius: 45,
-    height: 153,
-    width: 367,
+    height: 153 * 0.7,
+    width: 367 * 0.7,
   },
   innerCardStyle: {
     // borderRadius: 45,
   },
   outerGridStyle: {
     //textAlign: "center",
-    justifyContent: "right",
+    //justifyContent: "right",
   },
   innerGridStyle: {},
 }));
@@ -55,19 +55,13 @@ export default function InfoCard(props) {
     <Grid
       container
       item
+      direction="column"
       xs={12}
-      elevation={10}
-      className={classes.outerGridStyle}
+      className={classes.innerGridStyle}
     >
-      <Grid
-        container
-        item
-        direction="column"
-        xs={12}
-        className={classes.innerGridStyle}
-      >
-        <Grid container item>
-          <Card className={classes.cardStyle}>
+      <Grid container direction="column" item>
+        <Grid item>
+          <Card className={classes.cardStyle} elevation={0}>
             <CardMedia
               className={classes.previewCardMediaStyle}
               image={img}
@@ -75,11 +69,11 @@ export default function InfoCard(props) {
             />
           </Card>
         </Grid>
-        <Grid container item>
+        <Grid item>
           <Typography
-            variant="h4"
+            variant="h5"
             className={classes.previewCardSubTypographyStyle}
-            align="center"
+            //align="center"
           >
             take a break. find something local.
           </Typography>

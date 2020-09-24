@@ -5,7 +5,9 @@ import usePlacesAutocomplete, {
 } from "use-places-autocomplete";
 import useOnclickOutside from "react-cool-onclickoutside";
 import { makeStyles } from "@material-ui/core";
-import { Typography, Grid, Card } from "@material-ui/core";
+import { Typography, Grid, Card, TextField, Divider } from "@material-ui/core";
+import { Autocomplete } from "@material-ui/lab";
+
 import { withTheme } from "@material-ui/styles";
 
 const useStyles = makeStyles(() => ({
@@ -15,7 +17,10 @@ const useStyles = makeStyles(() => ({
   inputStyle: {
     // backgroundColor: "#ffffff",
     background: "transparent",
-    border: "none",
+    borderStyle: "solid",
+    //borderColor: "white",
+    //borderWidth: "thin",
+    border: "0",
     //borderBottom: ".9px",
     //borderBottomColor: "#E0E0E0",
     //borderBottomStyle: "solid",
@@ -23,21 +28,47 @@ const useStyles = makeStyles(() => ({
     marginTop: "2px",
     // marginBottom: "10px",
     color: "white",
+    // maxWidth: "400px",
+    outline: "none",
   },
-  nearStyle: {
-    marginRight: "15px",
+  nearTypographyStyle: {
+    marginRight: "11px",
     marginTop: "2px",
+    marginBottom: "2px",
+    marginLeft: "10px",
     color: "white",
   },
-  cardStyle: {
+  nearCardStyle: {
+    backgroundColor: "#65B6FF",
+    borderRadius: "0",
+    maxHeight: "35px",
+    //opacity: "0.1",
+  },
+
+  innerSearchBoxGridStyle: {
     backgroundColor: "#48A7FF",
-    width: "400px",
+    // minWidth: "600px",
+  },
+  SearchBoxGridStyle: {
+    backgroundColor: "#48A7FF",
+    minWidth: "300px",
+
     borderStyle: "solid",
     borderColor: "white",
     borderWidth: "thin",
   },
-  innerGridStyle: {
-    margin: "10px",
+  listStyle: {
+    // listStyleType: "none",
+  },
+  resultGridStyle: {
+    marginTop: "7px",
+    color: "white",
+  },
+  renderSuggestionsStyle: {
+    // backgroundColor: "#FFFFFF",
+  },
+  dividerStyle: {
+    backgroundColor: "white",
   },
 }));
 export default function SearchPlacesAutoCompleteBox(props) {
@@ -104,9 +135,25 @@ export default function SearchPlacesAutoCompleteBox(props) {
       } = suggestion;
 
       return (
-        <li key={id} onClick={handleSelect(suggestion)}>
-          <strong>{main_text}</strong> <small>{secondary_text}</small>
-        </li>
+        <div
+          key={id}
+          onClick={handleSelect(suggestion)}
+          className={classes.listStyle}
+        >
+          <Grid
+            container
+            direction="column"
+            className={classes.resultGridStyle}
+          >
+            <Grid item>
+              <strong>{main_text}</strong>{" "}
+            </Grid>
+            <Grid item>
+              <small>{secondary_text}</small>
+            </Grid>
+            <Divider className={classes.dividerStyle} />
+          </Grid>
+        </div>
       );
     });
 
@@ -116,25 +163,51 @@ export default function SearchPlacesAutoCompleteBox(props) {
     getCoor({ description });
   }, [props.address]);
 
+  console.log("value", value);
   return (
-    <div className={classes.gridStyle} ref={ref}>
-      <Card elevation={0} className={classes.cardStyle}>
-        <Grid container direction="row" className={classes.innerGridStyle}>
-          <Typography className={classes.nearStyle} variant="h5">
-            near
-          </Typography>
-
-          <input
-            value={value}
-            onChange={handleInput}
-            disabled={!ready}
-            placeholder="Your Neighborhood or Street"
-            className={classes.inputStyle}
-          />
-          {/* We can use the "status" to decide whether we should display the dropdown or not */}
-          {status === "OK" && <ul>{renderSuggestions()}</ul>}
+    <Card className={classes.SearchBoxGridStyle} ref={ref}>
+      <Grid container>
+        <Grid container item xs={3}>
+          <Card elevation={0} className={classes.nearCardStyle}>
+            <Typography className={classes.nearTypographyStyle} variant="h5">
+              near
+            </Typography>
+          </Card>
         </Grid>
-      </Card>
-    </div>
+        <Grid container item xs={9}>
+          <Card elevation={0} className={classes.innerSearchBoxGridStyle}>
+            <Grid container direction="row" className={classes.innerGridStyle}>
+              {/*
+                 <Grid item xs={2}>
+                <Typography className={classes.nearStyle} variant="h5">
+                  near
+                </Typography>
+              </Grid>
+              </Grid>
+                */}
+
+              <Grid item>
+                <input
+                  value={value}
+                  type="text"
+                  onChange={handleInput}
+                  disabled={!ready}
+                  id="fname"
+                  placeholder="Your Neighborhood or Street"
+                  className={classes.inputStyle}
+                />
+              </Grid>
+
+              {/* We can use the "status" to decide whether we should display the dropdown or not */}
+              {status === "OK" && (
+                <div className={classes.renderSuggestionsStyle}>
+                  {renderSuggestions()}
+                </div>
+              )}
+            </Grid>
+          </Card>
+        </Grid>
+      </Grid>
+    </Card>
   );
 }

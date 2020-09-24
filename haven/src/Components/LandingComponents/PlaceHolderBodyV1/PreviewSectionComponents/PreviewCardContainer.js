@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import PreviewCard from "./PreviewCardSuma";
+import PreviewCard from "./PreviewCard";
 import { Grid, Typography, makeStyles, Button } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
@@ -12,6 +12,7 @@ const useStyles = makeStyles(() => ({
   },
   featuredCardContainer: {
     marginTop: 50,
+    backgroundColor: "#F5F5F5",
   },
   featuredCardContainerHeader: {
     marginTop: 50,
@@ -29,7 +30,7 @@ const useStyles = makeStyles(() => ({
 
 export default function PreviewCardContainer(props) {
   // var amountViewed = 4;
-  const [amountViewed, setAmountViewed] = useState(4);
+  const [amountViewed, setAmountViewed] = useState(3);
   // let HavenType = props.havensData[0].category;
   const classes = useStyles();
   var previewCards;
@@ -37,7 +38,7 @@ export default function PreviewCardContainer(props) {
     .slice(0, amountViewed)
     .map((destinationData) => {
       return (
-        <Grid item container xs={3}>
+        <Grid item container lg={4} md={6} xs={12}>
           <PreviewCard
             destinationData={destinationData}
             key={destinationData._id}
@@ -99,9 +100,9 @@ export default function PreviewCardContainer(props) {
       direction="row"
       className={classes.featuredCardContainer}
     >
-      <Grid item xs={1}></Grid>
+      <Grid item xs={2}></Grid>
 
-      <Grid container item direction="column" xs={10}>
+      <Grid container item direction="column" xs={8}>
         <Grid
           container
           item
@@ -142,7 +143,7 @@ export default function PreviewCardContainer(props) {
         </Grid>
       </Grid>
 
-      <Grid item xs={1}></Grid>
+      <Grid item xs={2}></Grid>
     </Grid>
   );
 }

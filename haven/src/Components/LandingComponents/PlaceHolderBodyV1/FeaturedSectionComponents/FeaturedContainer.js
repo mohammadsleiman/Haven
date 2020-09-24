@@ -5,6 +5,7 @@ import { Grid, Typography, makeStyles } from "@material-ui/core";
 const useStyles = makeStyles(() => ({
   typoH2: {
     marginLeft: "-3.5px",
+    color: "white",
   },
   featuredCardGrid: {
     justifyContent: "space-between",
@@ -14,6 +15,7 @@ const useStyles = makeStyles(() => ({
     marginBottom: 50,
   },
   featuredCardContainer: {
+    backgroundColor: "#000000",
     //marginBottom: 50,
   },
 }));
@@ -41,12 +43,6 @@ export default function FeaturedContainer(props) {
               key={props.havensData[1]._id}
             />
           </Grid>
-          <Grid item>
-            <FeaturedCard
-              destinationData={props.havensData[2]}
-              key={props.havensData[2]._id}
-            />
-          </Grid>
         </Grid>
       );
     } else {
@@ -62,8 +58,8 @@ export default function FeaturedContainer(props) {
       className={classes.featuredCardContainer}
     >
       <Grid container item className={classes.featuredCardContainerHeader}>
-        <Grid container item xs={1}></Grid>
-        <Grid container item direction="column" xs={11}>
+        <Grid container item xs={2}></Grid>
+        <Grid container item direction="column" xs={10}>
           <Typography className={classes.typoH2} variant="h2">
             featured
           </Typography>
@@ -72,11 +68,11 @@ export default function FeaturedContainer(props) {
       </Grid>
 
       <Grid container justifyContent="center" item>
-        <Grid item xs={1} />
-        <Grid item container justifyContent="center" xs={10}>
+        <Grid item xs={2} />
+        <Grid item container justifyContent="center" xs={8}>
           {FeaturedCards()}
         </Grid>
-        <Grid item xs={1} />
+        <Grid item xs={2} />
       </Grid>
     </Grid>
   );

@@ -16,6 +16,7 @@ const useStyles = makeStyles(() => ({
     color: "white",
     fontSize: "90px",
     fontWeight: "normal",
+    lineHeight: "90px",
   },
 
   typoH5: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles(() => ({
 
     fontStyle: "normal",
     fontWeight: 300,
-    fontSize: "25px",
+    fontSize: "23px",
   },
   typoH52: {
     color: "#C98B04",

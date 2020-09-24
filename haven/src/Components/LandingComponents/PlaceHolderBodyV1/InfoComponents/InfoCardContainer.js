@@ -26,14 +26,21 @@ const useStyles = makeStyles(() => ({
 export default function InfoCardContainer(props) {
   const classes = useStyles();
 
+  // <Paper className={classes.paperStyle} elevation={0} />
+  // <Paper className={classes.paperStyleMiddle} elevation={0} />
+  // <Paper className={classes.paperStyle} elevation={0} />
+
+  /*<Grid container xs={12} direction="column" item>
+      <InfoCardTop />
+      <InfoCardBottom />
+    </Grid>*/
+
   return (
-    <Grid container direction="column" item>
+    <div>
+      <InfoCardTop />
       <Paper className={classes.paperStyle} elevation={0} />
 
-      <InfoCardTop />
-      <Paper className={classes.paperStyleMiddle} elevation={0} />
       <InfoCardBottom />
-      <Paper className={classes.paperStyle} elevation={0} />
-    </Grid>
+    </div>
   );
 }

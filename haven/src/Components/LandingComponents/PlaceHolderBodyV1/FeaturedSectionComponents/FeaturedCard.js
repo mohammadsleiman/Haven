@@ -14,9 +14,9 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   featuredCardMediaStyle: {
-    height: 300,
+    height: 400,
     minWidth: 350,
-    borderRadius: 45,
+    //borderRadius: 10,
   },
 
   previewCardSubTypographyStyle: {
@@ -25,6 +25,7 @@ const useStyles = makeStyles(() => ({
   featuredCardMainTypographyStyle: {},
   featuredCardStyle: {
     justifyContent: "center",
+    backgroundColor: "#FFFFFF",
   },
 }));
 
@@ -35,10 +36,15 @@ export default function FeaturedCard(props) {
   return (
     <Card
       className={classes.featuredCardStyle}
-      elevation={0}
+      elevation={3}
       onClick={() => history.push(`/destination/${props.destinationData._id}`)}
     >
       <CardActionArea>
+        <CardMedia
+          className={classes.featuredCardMediaStyle}
+          image={props.destinationData.img}
+          title="picture"
+        />
         <Typography
           variant="h6"
           className={classes.featuredCardMainTypographyStyle}
@@ -52,12 +58,6 @@ export default function FeaturedCard(props) {
           {props.destinationData.neighborhood} ·{" "}
           {props.destinationData.travelDistance} 🚲
         </Typography>
-
-        <CardMedia
-          className={classes.featuredCardMediaStyle}
-          image={props.destinationData.img}
-          title="picture"
-        />
       </CardActionArea>
     </Card>
   );
