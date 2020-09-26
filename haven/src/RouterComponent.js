@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from "./Components/NavbarComponents/Navbar";
 import Body from "./Components/LandingComponents/PlaceHolderBodyV1/Body";
 import DestinationBody from "./Components/DestinationComponents/DestinationBody";
+import SearchDestinations from "./Components/SearchDestinationsComponents/SearchDestinations";
 class RouterComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -38,6 +39,15 @@ class RouterComponent extends React.Component {
                 getDestinationsPreviewsData={this.getDestinationsPreviewsData}
                 updateCoorParent={this.props.updateCoorParent}
               />
+            </div>
+          )}
+        />
+        <Route
+          exact
+          path="/coffee"
+          render={(props) => (
+            <div>
+              <SearchDestinations coor={parentPropsCoor} />
             </div>
           )}
         />

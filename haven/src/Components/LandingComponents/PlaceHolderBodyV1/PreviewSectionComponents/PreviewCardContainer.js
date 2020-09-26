@@ -26,16 +26,17 @@ const useStyles = makeStyles(() => ({
   buttonGridStyle: {
     justifyContent: "flex-end",
   },
+  buttonStyle: {
+    marginBottom: "30px",
+  },
 }));
 
 export default function PreviewCardContainer(props) {
-  // var amountViewed = 4;
   const [amountViewed, setAmountViewed] = useState(3);
-  // let HavenType = props.havensData[0].category;
   const classes = useStyles();
   var previewCards;
   previewCards = props.havensData
-    .slice(0, amountViewed)
+    .slice(amountViewed - 3, amountViewed)
     .map((destinationData) => {
       return (
         <Grid item container lg={4} md={6} xs={12}>
@@ -48,10 +49,10 @@ export default function PreviewCardContainer(props) {
     });
 
   function handleButtonClick() {
-    if (amountViewed <= props.havensData.length) {
-      setAmountViewed((prev) => prev + 4);
+    if (amountViewed == 3) {
+      setAmountViewed((prev) => prev + 3);
       previewCards = props.havensData
-        .slice(0, amountViewed)
+        .slice(amountViewed - 3, amountViewed)
         .map((destinationData) => {
           return (
             <Grid item container xs={3}>
@@ -65,11 +66,11 @@ export default function PreviewCardContainer(props) {
     }
   }
   function handleLessButtonClick() {
-    if (amountViewed >= 8) {
-      setAmountViewed((prev) => prev - 4);
+    if (amountViewed == 6) {
+      setAmountViewed((prev) => prev - 3);
     }
     previewCards = props.havensData
-      .slice(0, amountViewed)
+      .slice(amountViewed - 3, amountViewed)
       .map((destinationData) => {
         return (
           <Grid item container xs={3}>
@@ -81,17 +82,6 @@ export default function PreviewCardContainer(props) {
         );
       });
   }
-
-  // function renderCard(destinationData) {
-  //   return (
-  //     <Grid item container xs={3}>
-  //       <PreviewCard
-  //         destinationData={destinationData}
-  //         key={destinationData._id}
-  //       />
-  //     </Grid>
-  //   );
-  // }
 
   return (
     <Grid
@@ -129,7 +119,7 @@ export default function PreviewCardContainer(props) {
               handleLessButtonClick();
             }}
           >
-            see less
+            {"<"}
           </Button>
           <Button
             className={classes.buttonStyle}
@@ -138,7 +128,7 @@ export default function PreviewCardContainer(props) {
               handleButtonClick();
             }}
           >
-            see more
+            {">"}
           </Button>
         </Grid>
       </Grid>

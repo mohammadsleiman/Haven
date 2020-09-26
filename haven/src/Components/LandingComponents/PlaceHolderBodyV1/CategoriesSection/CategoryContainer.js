@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import naturecategory from "./CategoryImages/naturecategory.png";
 import repaircategory from "./CategoryImages/repaircategory.jpg";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   innerGridStyle: {
@@ -25,6 +26,7 @@ const useStyles = makeStyles(() => ({
 }));
 export default function CategoryContainer(props) {
   const classes = useStyles();
+  let history = useHistory();
 
   return (
     <Grid item container xs={12} className={classes.outerGridStyle}>
@@ -40,7 +42,10 @@ export default function CategoryContainer(props) {
 
         <Grid container item>
           <Grid container item xs={3}>
-            <Card className={classes.categoryCardStyle}>
+            <Card
+              className={classes.categoryCardStyle}
+              onClick={() => history.push("/coffee")}
+            >
               <CardActionArea>
                 <CardMedia
                   className={classes.categoryCardMediaStyle}
