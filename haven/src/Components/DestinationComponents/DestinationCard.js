@@ -57,11 +57,11 @@ export default function DestinationCard(props) {
   const latlongConverstionRate = 69.2;
 
   function getTravelDistance() {
-    var travelDistance;
+    var travelDistances;
     if (props.destinationData.location) {
       //checks to see if props are filled with defined data yet
 
-      travelDistance = (
+      travelDistances = (
         latlongConverstionRate *
         bikeRidingRateMPH *
         Math.sqrt(
@@ -77,7 +77,7 @@ export default function DestinationCard(props) {
       ).toFixed(0);
     }
 
-    return travelDistance;
+    return travelDistances;
   }
   const travelDistance = getTravelDistance();
 

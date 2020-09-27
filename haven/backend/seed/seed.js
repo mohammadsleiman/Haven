@@ -16,6 +16,7 @@ function Seed() {
     const img = seedData[i].img;
     const links = seedData[i].links;
     const location = seedData[i].loc;
+    const featured = seedData[i].featured;
 
     const newDestination = new Destination({
       name,
@@ -27,6 +28,7 @@ function Seed() {
       location,
       img,
       links,
+      featured,
     });
 
     newDestination

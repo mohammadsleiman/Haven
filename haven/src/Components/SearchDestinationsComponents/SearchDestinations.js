@@ -62,7 +62,7 @@ export default function SearchDestinations(props) {
           Coffee Havens
         </Typography>
         <Typography variant="h5" className={classes.headerStyleSecondary}>
-          near
+          {`near: $`}
         </Typography>
         <Grid container item>
           <Grid item xs={2}></Grid>

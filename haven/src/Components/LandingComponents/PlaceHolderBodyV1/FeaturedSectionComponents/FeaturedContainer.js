@@ -27,20 +27,24 @@ export default function FeaturedContainer(props) {
   console.log(props);
   //const previewCards = props.havensData.map((destinationData) => {
 
+  var featuredData = props.havensData.filter((haven) => {
+    return haven.featured == true;
+  });
+
   const FeaturedCards = () => {
     if (props.havensData.length > 0) {
       return (
         <Grid container className={classes.featuredCardGrid} item>
           <Grid item>
             <FeaturedCard
-              destinationData={props.havensData[0]}
-              key={props.havensData[0]._id}
+              destinationData={featuredData[0]}
+              key={featuredData[0]._id}
             />
           </Grid>
           <Grid item>
             <FeaturedCard
-              destinationData={props.havensData[1]}
-              key={props.havensData[1]._id}
+              destinationData={featuredData[1]}
+              key={featuredData[1]._id}
             />
           </Grid>
         </Grid>

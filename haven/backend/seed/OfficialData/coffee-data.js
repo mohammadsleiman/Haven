@@ -14,6 +14,7 @@ const seedData = [
       type: "Point",
       coordinates: [-121.9478553, 37.3202302],
     },
+    featured: false,
   },
   {
     name: "Papermoon Cafe",
@@ -34,6 +35,7 @@ const seedData = [
       type: "Point",
       coordinates: [-121.9944611, 37.3239944],
     },
+    featured: false,
   },
   {
     name: "Voyager Craft Coffee",
@@ -50,6 +52,7 @@ const seedData = [
       type: "Point",
       coordinates: [-121.9944611, 37.3239944],
     },
+    featured: false,
   },
   {
     name: "Voyager Craft Coffee",
@@ -71,6 +74,7 @@ const seedData = [
       type: "Point",
       coordinates: [-121.972528, 37.32362],
     },
+    featured: false,
   },
   {
     name: "Sue's Gallery Cafe",
@@ -90,6 +94,7 @@ const seedData = [
       "Water Available",
     ],
     loc: { type: "Point", coordinates: [-122.0374028, 37.2558028] },
+    featured: false,
   },
   {
     name: "Manresa Bread",
@@ -103,6 +108,7 @@ const seedData = [
     },
     attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.9466851, 37.2872623] },
+    featured: false,
   },
   {
     name: "Manresa Bread",
@@ -116,6 +122,7 @@ const seedData = [
     },
     attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.9808364, 37.2273788] },
+    featured: false,
   },
   {
     name: "Orchard Valley Coffee",
@@ -132,6 +139,7 @@ const seedData = [
       "Water Available",
     ],
     loc: { type: "Point", coordinates: [-121.9437394, 37.2871612] },
+    featured: false,
   },
   {
     name: "Loma Coffee Bar",
@@ -145,6 +153,7 @@ const seedData = [
     },
     attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
     loc: { type: "Point", coordinates: [-121.9823489, 37.2251501] },
+    featured: false,
   },
   {
     name: "Philz Coffee",
@@ -163,6 +172,7 @@ const seedData = [
       "Water Available",
     ],
     loc: { type: "Point", coordinates: [-121.931356, 37.2875295] },
+    featured: true,
   },
   {
     name: "Barefoot Coffee",
@@ -177,6 +187,7 @@ const seedData = [
     attributes: ["Locally Owned", "Bathrooms Available", "Water Available"],
 
     loc: { type: "Point", coordinates: [-121.9320264, 37.3303865] },
+    featured: true,
   },
 ];
 

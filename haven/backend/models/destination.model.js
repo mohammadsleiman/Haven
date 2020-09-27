@@ -33,6 +33,7 @@ const destinationSchema = new Schema(
     rating: { type: Number, required: true },
     attributes: [{ type: String }],
     img: { type: String, required: true },
+    featured: { type: Boolean, required: true },
     links: { instagram: { type: String }, map: { type: String } },
     // loc: { type: { type: String }, coordinates: [Number] },
     location: {
