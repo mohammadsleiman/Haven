@@ -3,3 +3,7 @@
 
 
 Need a place to meet with friends? Not sure where your next stop will be? Join Haven, a platform for cyclists like you to discover, share, rate & review local businesses and public areas.
+
+Haven is a full-stack web project to connect cyclists with great businesses and places across their city. Logged-in users can search, review & rate local places. Built using the MERN Stack (MongoDB, Express.js, React.js, Node.js), Google Places & Auth API, MongoDb Atlas, and AWS.
+
+
